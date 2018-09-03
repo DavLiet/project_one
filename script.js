@@ -1,6 +1,8 @@
 var x;
 var y;
 var gameBoard = document.getElementById("board");
+var hits = 0;
+var highScore = 0; //get this from database or w/e
 
 
 /**
@@ -38,11 +40,16 @@ gameBoard.addEventListener('click',(event)=>{
     let mouseX = event.clientX;
     let mouseY = event.clientY;
     if((mouseX > x && mouseX < x + 50) && (mouseY > y && mouseY < y + 50)){
-        alert("YES!");
+        hits++;
+        document.getElementById("score").innerHTML = hits;
         randomRectangle();
     }
     else{
-        alert("NOOOOO");
+        alert("You missed! Score: " + hits);
+        if (hits > highScore) {
+            //save highscore in database
+        }
+        hits = 0;
     }
 });
 
