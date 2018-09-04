@@ -3,9 +3,32 @@
     <title>Project One created by David, Anh, Sarah, and John</title>
     <style src="style.css"></style>
 </head>
-<body onload="randomRectangle()">
+<body onload="init()">
     <canvas id="board" width="500" height="500" style="background: blue"></canvas>
-    <p>High score: <div id="score"></div></p>
+    <p>Current score: <div id="score">0</div></p>
+    <p>High score: <div id="hScore">0</div></p>
+
+
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDGp1ruXf6weQjqAv8QncKzgAsyyMXNTr8",
+    authDomain: "cse437project1.firebaseapp.com",
+    databaseURL: "https://cse437project1.firebaseio.com",
+    projectId: "cse437project1",
+    storageBucket: "",
+    messagingSenderId: "232500225596"
+  };
+  firebase.initializeApp(config);
+</script>
+
     <script src="script.js"></script>
 </body>
 </html>
